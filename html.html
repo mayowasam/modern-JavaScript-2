@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .menu ul {
+            margin: 0;
+            list-style: none;
+            padding-left: 20px;
+            display: none;
+        }
+
+        .menu .title::before {
+            content: '▶ ';
+            font-size: 80%;
+            color: green;
+        }
+
+        .menuopen .title::before {
+            content: '▼ ';
+        }
+
+        .menuul ul {
+            display: block;
+        }
+
+        .main {
+            width: 100%;
+        }
+
+        .bord {
+            width: 80%;
+            margin: auto;
+            border: 2px solid chartreuse;
+            padding: 8px;
+        }
+
+        table {
+            width: 80%;
+            border: 1px solid;
+            padding: 10px;
+            margin: auto;
+        }
+
+        .nw {
+            width: 33.3%;
+            border: none;
+            text-align: center;
+            padding: 10px;
+            background-color: grey;
+        }
+
+        .n {
+            width: 33.3%;
+            border: none;
+            text-align: center;
+            padding: 10px;
+            background-color: blue;
+        }
+
+        .ne {
+            width: 33.3%;
+            border: none;
+            text-align: center;
+            padding: 10px;
+            background-color: yellowgreen;
+        }
+
+        .w {
+            width: 33.3%;
+            border: none;
+            text-align: center;
+            padding: 10px;
+            background-color: yellow;
+        }
+
+        .c {
+            width: 33.3%;
+            border: none;
+            text-align: center;
+            padding: 10px;
+            background-color: purple;
+        }
+
+        .e {
+            width: 33.3%;
+            border: none;
+            text-align: center;
+            padding: 10px;
+            background-color: rgb(114, 92, 236);
+        }
+
+        .sw {
+            width: 33.3%;
+            border: none;
+            text-align: center;
+            padding: 10px;
+            background-color: rgb(236, 166, 34);
+        }
+
+        .s {
+            width: 33.3%;
+            border: none;
+            text-align: center;
+            padding: 10px;
+            background-color: rgb(236, 233, 34);
+        }
+
+        .se {
+            width: 33.3%;
+            border: none;
+            text-align: center;
+            padding: 10px;
+            background-color: rgb(34, 236, 101);
+        }
+
+        .highlight {
+            background-color: grey;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="menu" id="menu">
+        <h1 class="title" id="title">click me</h1>
+        <ul>
+            <li>football</li>
+            <li>basketball</li>
+            <li>volleyball</li>
+            <li>netball</li>
+            <li>snowball</li>
+
+        </ul>
+    </div>
+
+
+    <br>
+    <div class="main">
+        <div class="bord" id="bord">
+            <h1>horse</h1>
+            <p>
+                The horse is one of two extant subspecies of Equus ferus. It is an
+                odd-toed ungulate mammal belonging to the taxonomic family
+                Equidae. The horse has evolved over the past 45 to 55 million years
+                from a small multi-toed creature, Eohippus, into the large, singletoed
+                animal of today.
+            </p>
+        </div>
+        <div class="bord">
+            <h1>donkey</h1>
+            <p>
+                The donkey or ass (Equus africanus asinus) is a domesticated
+                member of the horse family, Equidae. The wild ancestor of the
+                donkey is the African wild ass, E. africanus. The donkey has been
+                used as a working animal for at least 5000 years.
+            </p>
+        </div>
+
+
+    </div>
+
+
+
+    <form onclick="alert('form')" style="border: 1px solid red;">FORM
+        <div onclick="alert('div')" style="border: 1px solid blue;">DIV
+            <p onclick="alert('p')" style="border: 1px solid green;">P</p>
+        </div>
+    </form>
+
+
+
+    <button onclick="event.stopPropagation()">Click me</button>
+    <br>
+
+    <table id="table">
+        <tr>
+            <th><em>Bagua</em></th>
+        </tr>
+        <tr>
+            <td class="nw"><strong>northwest</strong><br>metal<br>silver</td>
+            <td class="n" id="n"><strong>north</strong><br>metal<br>silver</td>
+            <td class="ne"><strong>northeast</strong><br>metal<br>silver</td>
+        </tr>
+        <tr>
+            <td class="w"><strong>west</strong><br>metal<br>silver</td>
+            <td class="c"><strong>center</strong><br>metal<br>silver</td>
+            <td class="e"><strong>east</strong><br>metal<br>silver</td>
+        </tr>
+        <tr>
+
+            <td class="sw"><strong>southwest</strong><br>metal<br>silver</td>
+            <td class="s"><strong>south</strong><br>metal<br>silver</td>
+            <td class="se"><strong>southeast</strong><br>metal<br>silver</td>
+        </tr>
+
+
+    </table>
+
+    <div id="medium">
+        <button data-action="save">Save</button>
+        <button data-action="load">Load</button>
+        <button data-action="search">Search</button>
+    </div>
+
+    <a href="/" onclick="event.preventDefault()"> click me</a>
+
+
+    <ul id="menus" class="menus">
+        <li><a href="/html">HTML</a></li>
+        <li><a href="/javascript">JavaScript</a></li>
+        <li><a href="/css">CSS</a></li>
+        <li id="li" onclick="console.log(event.target.nodeName);console.log(event.target.tagName)"><a>CSS</a></li>
+
+    </ul>
+
+
+    <input value="Focus works" onfocus="this.value=''">
+    <input onmousedown="return false" onfocus="this.value=''" value="Click me">
+
+    <br>
+    <button>Right-click shows browser context menu</button>
+    <button oncontextmenu="return false">
+        Right-click shows our context menu
+    </button>
+    <button oncontextmenu="event.preventDefault()">Right-click </button>
+
+
+
+    <p>Right-click here for the document context menu</p>
+    <button id="el">Right-click here for the button context menu</button>
+
+
+
+<p>How about to read <a href="www.wikipedia.com" onclick="myfunc(event)">Wikipedia</a> or visit <a href="www.w3schools.com" onclick="myfunc(event)">W3.org</a> and learn about modern standards?</p>
+
+
+
+
+    <script src='load.js'></script>
+
+</body>
+
+</html>
